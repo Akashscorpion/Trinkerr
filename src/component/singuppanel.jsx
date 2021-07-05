@@ -29,9 +29,12 @@ function Panel(props) {
      
        if((Number(loggedDetails)!=NaN && loggedDetails.length==10) )
        {
+           if(!JSON.parse(localStorage.getItem(loggedDetails))){
         setuserInfo({tempData:loggedDetails})
           setotpValidation("1");
-          
+           }
+           else
+           seterr("User Already exists");
     }
     else
     seterr("Invalid mobile Number");
