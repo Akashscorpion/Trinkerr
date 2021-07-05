@@ -76,7 +76,7 @@ function Panel(props) {
               { otpValidation==0? (<input id='mob' name='Mobile' type='tel' placeholder='Enter your mobile number' onChange={()=>seterr("")} required />)
               :(<input id='otp' name='otp' type='otp' placeholder='Please Enter the otp.' onChange={()=>seterr("")} required /> )
               }
-              {err && <p>{err}</p>}
+              {err && <p style={{color:'red'}}>{err}</p>}
               <br/>
               <input className='btn-submit-form' type='submit'  value={otpValidation==0?'Get otp':'Verify'}/>
               </form>
