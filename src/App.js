@@ -2,6 +2,7 @@ import React,{useState,useEffect} from 'react'
 import Panel from './component/singuppanel'
 import Login from './component/Loginpanel'
 import Welcome from './component/welcome'
+import ImgSlider from './component/imgeSlider'
 import './App.css';
 
 function App() {
@@ -16,7 +17,7 @@ function App() {
     const userid=localStorage.getItem('Active')
     console.log(userid);
     setuserInfo(JSON.parse(localStorage.getItem(userid)))
-
+    setlogin(1);
   }
   }, [])
 
@@ -66,8 +67,9 @@ const loginMain=(userid)=>{
       </div>
 		    
 
-		</div>):
+		</div>):<>
     <Welcome logoutfn={logoutfn} userL={userInfo.lastName} userF={userInfo.firstName}/>
+    <ImgSlider userL={userInfo.lastName} userF={userInfo.firstName}/> </>
     }
     </div>
   );
